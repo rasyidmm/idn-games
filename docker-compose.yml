@@ -1,0 +1,87 @@
+version: '3.5'
+services:
+  app:
+    build:
+      context: ./game-play
+      dockerfile: Dockerfile
+    container_name: game-play
+    ports:
+      - "8083:8083"
+    depends_on:
+      - app1
+    networks:
+      backendme:
+        ipv4_address: 172.25.0.3
+    command: ifconfig
+#    restart: unless-stopped
+  app1:
+    build:
+      context: ./games
+      dockerfile: Dockerfile
+    container_name: games
+    ports:
+      - "8082:8082"
+    depends_on:
+      - app2
+    networks:
+      backendme:
+        ipv4_address: 172.25.0.2
+    command: ifconfig
+#    restart: unless-stopped
+  app2:
+    build:
+      context: ./players
+      dockerfile: Dockerfile
+    container_name: players
+    ports:
+      - "8085:8085"
+    depends_on:
+      - db
+    networks:
+      backendme:
+        ipv4_address: 172.25.0.5
+    command: ifconfig
+#    restart: unless-stopped
+  app3:
+    build:
+      context: ./games-logic
+      dockerfile: Dockerfile
+    container_name: games-logic
+    ports:
+      - "8080:8080"
+    depends_on:
+      - app
+    networks:
+      backendme:
+        ipv4_address: 172.25.0.4
+    command: ifconfig
+#    restart: unless-stopped
+  db:
+    container_name: docker-mysql-idn
+    image: mysql:8.0
+    cap_add:
+      - SYS_NICE
+    restart: always
+    environment:
+      - MYSQL_DATABASE=idn_db
+      - MYSQL_ROOT_PASSWORD=P@ssw0rd
+    ports:
+      - '3306:3306'
+    volumes:
+      - db:/var/lib/mysql
+      - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql
+    networks:
+      backendme:
+        ipv4_address: 172.25.0.8
+
+volumes:
+  db:
+    driver: local
+
+networks:
+  backendme:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        -  subnet: 172.25.0.0/16

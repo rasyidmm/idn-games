@@ -1,0 +1,9 @@
+database:
+  Games:
+    mysql:
+      host: 172.25.0.88
+      port: 3306
+      username: root
+      password: P@ssw0rd
+      dbname: idn-db
+      adapter: mysql

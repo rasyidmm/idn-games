@@ -1,0 +1,13 @@
+client:
+  players:
+    Url: http://172.25.0.5
+    Port: "8085"
+    Endpoint: "players"
+  games:
+    Url: http://172.25.0.2
+    Port: "8082"
+    Endpoint: "games"
+  gamePlay:
+    Url: http://172.25.0.3
+    Port: "8083"
+    Endpoint: "game-play"

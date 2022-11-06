@@ -1,0 +1,56 @@
+// Create - quest
+{
+    "name_quest": "bertanam",
+    "level_quest": "1",
+    "time_quest": "20",
+    "tasks": [
+        {
+            "name_task": "membuat bibit",
+            "description": "Membuat bibit dari buah yang sudah ada",
+            "score_task": "3"
+        },
+        {
+            "name_task": "membuat pupuk",
+            "description": "Membuat pupuk dari kotoran hewat",
+            "score_task": "5"
+        },
+        {
+            "name_task": "Menyiram Air",
+            "description": "Memberi Air Pada Tanaman",
+            "score_task": "3"
+        },
+                {
+            "name_task": "Membasmi Hama",
+            "description": "menghilangkan hama dari tamanan",
+            "score_task": "10"
+        }
+    ]
+}
+//
+{
+    "name_quest": "berternak",
+    "level_quest": "1",
+    "time_quest": "20",
+    "tasks": [
+        {
+            "name_task": "membuat kandang",
+            "description": "Membuat rumah untuk hewan",
+            "score_task": "3"
+        },
+        {
+            "name_task": "membuat makanan",
+            "description": "Membuat makanan",
+            "score_task": "5"
+        },
+        {
+            "name_task": "memberi Air",
+            "description": "memberi Minuman",
+            "score_task": "3"
+        },
+                {
+            "name_task": "membersihkan Kandang",
+            "description": "Membersihkan rumah hwan ",
+            "score_task": "10"
+        }
+    ]
+}

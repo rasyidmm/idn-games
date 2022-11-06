@@ -1,0 +1,13 @@
+client:
+  players:
+    Url: http://localhost
+    Port: "8085"
+    Endpoint: "players"
+  games:
+    Url: http://localhost
+    Port: "8082"
+    Endpoint: "games"
+  gamePlay:
+    Url: http://localhost
+    Port: "8083"
+    Endpoint: "game-play"
